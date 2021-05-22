@@ -1,3 +1,5 @@
 a_list = [1, 2, 3, 4, 5]
-a_list += 6
-print(a_list)
+b_list = ['a', 'b', 'c', 'd', 'e']
+[[print(i, j) for i in a_list] for j in b_list]
+
+[print(j) for i in a_list for j in b_list]
