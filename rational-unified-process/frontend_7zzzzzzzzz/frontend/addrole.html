@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Baumans" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Baumans" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Aladin" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+</head>
+<body style="text-align:center;" class="body">
+<div class="inset-text-effect">Создание роли </div>
+
+<p><input type="text"  class="button" id="name" placeholder="Название роли"><br>
+<p><textarea id="description" class="button" placeholder="Описание" rows="5" cols="23"></textarea><br><br>
+<div class="inset-text-effect-root">Дать рут права роли</div>   <input  type="checkbox" id="supervisor" name="supervisor" value="false"/>
+
+<p>
+    <button class="button-css" onclick="sendJSON()">Создать</button>
+    <!-- server out -->
+<p class="result" style="color:blue"></p> </p>
+
+</body>
+</html>
+<script>
+function sendJSON() {
+// с помощью jQuery обращаемся к элементам на странице по их именам
+    let name = document.querySelector('#name');
+    let description = document.querySelector('#description');
+    var chbox;
+    var supervisor;
+    chbox=document.getElementById('supervisor');
+    // let supervisor = document.querySelector('#supervisor');
+    if (chbox.checked) {
+        supervisor=true;
+    }
+    else {
+        supervisor=false;
+    }
+
+    if(name.value==="" || description.value==="" ){
+        alert("имя роли и описание не должны быть пустые")
+
+    }else {
+// ответ от сервера
+    let result = document.querySelector('.result');
+// создаём новый экземпляр запроса XHR
+    let xhr = new XMLHttpRequest();
+// адрес
+    let url = "http://frontend/role.php";
+// открываем соединение
+    xhr.open("POST", url, true); // устанавливаем заголовок — выбираем тип контента, который отправится на сервер, в нашем случае мы явно пишем, что это JSON
+    xhr.setRequestHeader("Content-Type", "application/json");
+// прием ответа от сервера
+    xhr.onreadystatechange = function () {
+        // если запрос принят и сервер ответил, что всё в порядке
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // ответ от сервера
+            alert("Роль успешно создана")
+            // result.innerHTML = this.responseText;
+        }
+    };
+    var data = JSON.stringify({"type":1,"name": name.value, "description": description.value,"supervisor":supervisor});
+// когда всё готово, отправляем JSON на сервер
+    xhr.send(data);}
+} </script>

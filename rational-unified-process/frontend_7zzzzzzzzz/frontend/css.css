@@ -1,0 +1,133 @@
+.inset-text-effect {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal 50px/1 "Aladin", Helvetica, sans-serif;
+    color: rgba(48,48,48,1);
+    text-align: center;
+    text-transform: normal;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67) ;
+}
+.inset-text-effect-root {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal 20px/1 "Aladin", Helvetica, sans-serif;
+    color: rgba(48,48,48,1);
+    text-align: center;
+    text-transform: normal;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67) ;
+}
+.body{
+    background: #5e5e5e;
+}
+.button-css {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    padding: 0 20px;
+    border: none;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    font: normal normal bold 20px/40px "Baumans", Helvetica, sans-serif;
+    color: black;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    /*background: rgb(221, 221, 221);*/
+    background: #5e5e5e;
+    -webkit-box-shadow: 0 1px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 3px 0 0 rgb(119,119,119) , 0 4px 0 0 rgb(119,119,119) , 0 5px 0 0 rgb(119,119,119) , 0 6px 0 0 rgb(119,119,119) , 0 0 5px 0 rgba(0,0,0,0.0980392) , 0 1px 3px 0 rgba(0,0,0,0.298039) , 0 3px 5px 0 rgba(0,0,0,0.2) , 0 5px 10px 0 rgba(0,0,0,0.247059) , 0 10px 10px 0 rgba(0,0,0,0.2) , 0 20px 20px 0 rgba(0,0,0,0.14902) ;
+    box-shadow: 0 1px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 3px 0 0 rgb(119,119,119) , 0 4px 0 0 rgb(119,119,119) , 0 5px 0 0 rgb(119,119,119) , 0 6px 0 0 rgb(119,119,119) , 0 0 5px 0 rgba(0,0,0,0.0980392) , 0 1px 3px 0 rgba(0,0,0,0.298039) , 0 3px 5px 0 rgba(0,0,0,0.2) , 0 5px 10px 0 rgba(0,0,0,0.247059) , 0 10px 10px 0 rgba(0,0,0,0.2) , 0 20px 20px 0 rgba(0,0,0,0.14902) ;
+    text-shadow: 0 1px 0 #FFFFFF ;
+}
+
+.button-css:hover {
+    background: #5e5e5e;
+}
+
+.button-css:active {
+    margin: 6px 0 0;
+    background: #5e5e5e;
+    -webkit-box-shadow: 0 -1px 10px 0 rgba(0,0,0,0.247059) , 0 4px 10px 0 rgba(0,0,0,0.2) , 0 14px 20px 0 rgba(0,0,0,0.14902) ;
+    box-shadow: 0 -1px 10px 0 rgba(0,0,0,0.247059) , 0 4px 10px 0 rgba(0,0,0,0.2) , 0 14px 20px 0 rgba(0,0,0,0.14902) ;
+}
+a.class-a{  font: normal 50px/1 "Aladin", Helvetica, sans-serif;
+    color: rgba(48,48,48,1);
+    text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67) ;
+    text-decoration: none; border-bottom: none;}
+a.class-a:hover{color:white; border-bottom: none;}
+
+.h1-css {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    /*margin: 40px;*/
+    margin: 58px 58px 8px 46px;
+    border: none;
+    font: normal 52px/1 "Lucida Console", Monaco, monospace;
+    color: #082f49;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.button {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 150px;
+    height: 42px;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 21px;
+    border-radius: 21px;
+    font: normal 20px/normal "Antic", Helvetica, sans-serif;
+    color: rgba(140,140,140,1);
+    text-decoration: normal;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: rgba(40,40,40,0.4);
+    -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.5) inset;
+    box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.5) inset;
+    -webkit-transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    -moz-transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    -o-transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+}
+
+.button:hover {
+    color: rgba(181,181,181,1);
+    background: rgba(0,0,0,0.4);
+    -webkit-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    -moz-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    -o-transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    transition: all 500ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+}
+
+.button:focus {
+    width: 213px;
+    cursor: default;
+    padding: -13px 20px 0;
+    color: rgba(255,255,255,1);
+    -webkit-transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    -moz-transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    -o-transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+    transition: all 601ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+}

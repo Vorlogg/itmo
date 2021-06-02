@@ -1,0 +1,82 @@
+{
+  "type1": {
+    "type": "добавить роль",
+    "name": "admin",
+    "description": "admin",
+    "supervisor": true
+  },
+  "type1 0твет": {
+    "успешность операции": true,
+
+  },
+
+  "type2": {
+    "type": "получить роль"
+  },
+  "type2 ответ": {
+    "role": [
+      "role1",
+      "role2",
+      "role3"
+    ]
+  },
+
+
+
+  "type4": {
+    "type": "Создание учетной записи",
+    "name": "god",
+    "id_worker": "45747",
+    "wage": 500000,
+    "role": "admin",
+    "password": "dfff"
+  },
+  "type4 0твет": {
+    "успешность операции": true
+  },
+
+
+
+  "type4.5": {
+  "type": "Получение данных об  учетной записи",
+},
+"type4.5 0твет": {
+  "name": "god",
+  "id_worker": "45747",
+  "wage": 500000,
+  "role": "admin",
+  "password": "dfff"
+},
+
+
+
+  "type5": {
+    "type": "Редактирование учетной записи",
+    "name": "god",
+    "id_worker": "45747",
+    "wage": 500000,
+    "role": "admin",
+    "password": "dfff"
+  },
+  "type5 0твет": {
+    "успешность операции": true
+  },
+
+
+
+  "type6": {
+    "type": "Вход учетной записи",
+    "name": "god",
+    "role": "admin",
+    "password": "dfff"
+  },
+  "type6 0твет": {   //куки
+    "успешность операции": true,
+    "supervisor": true,
+    "rank": "admin",
+    "name": "god",
+    "id_worker": "45747"
+  }
+}
+
+

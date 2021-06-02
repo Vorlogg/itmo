@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css.css">
+  <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+  <link async href="http://fonts.googleapis.com/css?family=Baumans" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+  <link async href="http://fonts.googleapis.com/css?family=Aladin" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+  <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+</head>
+<body style="text-align:center;" class="body">
+<!--<div class="h1-css">Создание учетной записи </div>-->
+<div class="inset-text-effect">Создание учетной записи</div>
+<p><input type="text"  class="button" id="name" placeholder="ФИО"><br>
+<p><input type="text"  class="button" id="workerid" placeholder="Номер сотрудника"><br>
+<p><input type="text"  class="button" id="wage" placeholder="Зарплата"><br>
+<p><input type="password"  class="button" id="password" placeholder="пароль"><br>
+
+<p><select  class="button" name="role" id="role">
+</select>
+
+<p>
+  <button class="button-css" onclick="sendJSON()">Создать</button>
+  <!-- server out -->
+<p class="result" style="color:blue"></p> </p>
+<div class="output"></div>
+</body>
+<script></script>
+</html>
+<script>
+
+  let url = "http://frontend/role1.php";
+  let role = new XMLHttpRequest();
+  role.open("GET", url, true);
+  // когда придёт ответ на наше обращение к серверу, мы его обработаем здесь
+  role.setRequestHeader("Content-Type", "application/json");
+
+  role.onreadystatechange = function () {
+    // прием ответа от сервера
+    if (role.readyState === 4 && role.status === 200) {
+        // парс джейсона
+      var data = JSON.parse(role.responseText);
+      //заполнение ролей
+      var list = document.getElementById('role'),
+              arr = data.role,
+              item = document.createElement('option');
+      for (var i = 0; i < arr.length; i++) {
+        item.innerHTML = arr[i];
+        list.appendChild(item.cloneNode(true));
+      }
+
+    }
+  };
+  //кодировка запроса на сервер
+  var data = JSON.stringify({"type":2});
+  //  JSON на сервер
+  role.send(data);
+
+  function sendJSON() {
+// с помощью jQuery обращаемся к элементам на странице по их именам
+    let name = document.querySelector('#name');
+    let workerid = document.querySelector('#workerid');
+    let wage = document.querySelector('#wage');
+    let password = document.querySelector('#password');
+    let role = document.querySelector('#role');
+
+// ответ от сервера
+    let result = document.querySelector('.result');
+// создаём новый экземпляр запроса XHR
+    let xhr = new XMLHttpRequest();
+// адрес
+    let url = "http://frontend/user.php";
+// открываем соединение
+    xhr.open("POST", url, true); // устанавливаем заголовок — выбираем тип контента, который отправится на сервер, в нашем случае мы явно пишем, что это JSON
+    xhr.setRequestHeader("Content-Type", "application/json");
+// прием ответа от сервера
+    xhr.onreadystatechange = function () {
+      // если запрос принят и сервер ответил, что всё в порядке
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // ответ от сервера
+        alert("Учетная запись успешно создана")
+        // result.innerHTML = this.responseText;
+      }
+    };
+
+    var data = JSON.stringify({"type":4,"name": name.value, "workerid": workerid.value,"wage":wage.value,"password":password.value,"role":role.value});
+    xhr.send(data);
+  } </script>

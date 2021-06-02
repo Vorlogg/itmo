@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        function OnLoad() {
+            $('#adduser').hide();
+            $('#role').hide();
+            var userid = window.location.href.split("?")[1].split("=")[1]
+            // var userid = window.location.href.split("?")[2].split("=")[2]
+            // var url = "edituser.html?userid="+userid.toString();
+            var url = "edituser.html?userid="+userid.toString();
+            $('#edituser').attr("href",url);
+            if (userid === "1") {
+                $('#adduser').show();
+                $('#role').show()
+            }
+
+        }
+    </script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body style="text-align:center;" class="body" onload="OnLoad()">
+
+<p><div  class="inset-text-effect"><a  class="class-a" href="addrole.html">Создание роли</a></div>
+
+<p><div  class="inset-text-effect"><a class="class-a" href="adduser.html">Создание пользователя</a></div>
+
+<p><div  class="inset-text-effect"><a class="class-a"  href="edituser.html">Редактирование учетной записи</a></div>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Baumans" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+
+    <link async href="http://fonts.googleapis.com/css?family=Aladin" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link async href="http://fonts.googleapis.com/css?family=Antic" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+</head>
+<body style="text-align:center;" class="body">
+<!--<div class="h1-css">Вход в учетную запись </div>-->
+<div class="inset-text-effect">Вход в учетную запись</div>
+
+<p><input type="text" class="button" id="login" placeholder="Логин"><br>
+<p></p><input type="password"  class="button" id="password" placeholder="пароль"><br>
+<p>
+
+    <button class="button-css" onclick="login()">Вход</button>
+
+
+</body>
+</html>
+<script>
+function login() {
+
+    let login = document.querySelector('#login');
+    let password = document.querySelector('#password');
+    let type=6;
+    if(login.value==="" || password.value==="" ){
+        alert("логин и пароль не должны быть пустые")
+
+    }else {
+
+
+
+        let xhr = new XMLHttpRequest();
+
+        let url = "http://frontend/json.php";
+
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function () {
+
+            if (xhr.readyState === 4 && xhr.status === 200) {
+
+                var out = JSON.parse(xhr.responseText);
+                // result.innerHTML = out.result;
+                if(out.result==="true"){
+                    // document.location = "http://frontend/main.html?admin=" +out.admin.toString()+"?userid="+out.userid.toString();
+                    document.location = "http://frontend/main.html?userid="+out.userid.toString();
+
+                }else{
+                    alert("неверный пароль или логин")
+                }
+            }
+        };
+
+
+        var data = JSON.stringify({"type": type, "login": login.value, "password": password.value});
+
+        xhr.send(data);
+    }
+} </script>
